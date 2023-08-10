@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const attractionGallery = document.getElementById("attraction-gallery");
 
   // Fetch attraction data from the local JSON DB server
-  fetch("https://localhost:3000")
+  fetch("https://localhost:3000/attractions")
     .then(response => response.json())
     .then(data => {
       // Ensure data is an array
