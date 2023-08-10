@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const attractionGallery = document.getElementById("attraction-gallery");
 
   // Fetch attraction data from the local JSON DB server
-  fetch("https://localhost:3000/attractions")
+  fetch("http://localhost:3000/attractions")
     .then(response => response.json())
     .then(data => {
       // Ensure data is an array
@@ -101,10 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
           saveAttractions(attractions);
         }
 
-        // Function to update the reviews on the server using PATCH request
+        // Function to update the reviews on tghe server using PATCH request
         async function updateAttractionReviews(attractionId, reviews) {
           try {
-            const response = await fetch(`https://localhost:3000/attractions/${attractionId}`, {
+            const response = await fetch(`http://localhost:3000/attractions/${attractionId}`, {
               method: "PATCH",
               headers: {
                 "Content-Type": "application/json",
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
    // Function to update the likes on the server using PATCH request
   function updateAttractionLikes(attractionId, likes) {
-      fetch(`https://localhost:3000/attractions/${attractionId}`, {
+      fetch(`http://localhost:3000/attractions/${attractionId}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",
